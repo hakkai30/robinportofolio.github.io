@@ -1,0 +1,87 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+main {
+    max-width: 700px;
+    margin: 60px auto 0 auto;
+    padding: 40px 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    display: block;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+    color: #004080;
+}
+
+.trabajos {
+    margin: 30px 0;
+}
+
+.trabajos h2 {
+    color: #004080;
+    margin-bottom: 18px;
+}
+
+.trabajo {
+    background: #eaf6ff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    padding: 20px;
+    margin: 0 auto 24px auto;
+    max-width: 460px;
+    text-align: center;
+}
+
+.trabajo h3 {
+    color: #1995d7;
+    margin-bottom: 10px;
+    text-align: center
+}
+
+.trabajo p {
+    margin-bottom: 12px;
+    font-size: 1.08rem;
+    text-align: center
+}
+
+.trabajo a {
+    color: #1995d7;
+    text-decoration: underline;
+}
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    color: #004080;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    font-size: 1.15rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+  
+  
+
+  
+
+
+
+  

@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    display: block;
+}
+
+h1 {
+    color: #004080;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+#contacto {
+    margin: 30px auto 20px auto;
+    padding: 20px 25px;
+    background: #eaf6ff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    max-width: 380px;
+}
+
+#contacto h2 {
+    color: #1995d7;
+    margin-bottom: 14px;
+}
+
+#contacto p {
+    font-size: 1.07rem;
+    margin-bottom: 10px;
+}
+
+#contacto a {
+    color: #1995d7;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    color: #004080;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    font-size: 1.15rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.icono-mail,
+.icono-phone,
+.icono-linkedin {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.iconos-contacto {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-top: 18px;
+}
+
+.icono {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.icono:hover {
+    transform: scale(1.09);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+
+
+
