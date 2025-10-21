@@ -1,0 +1,47 @@
+body {
+    background: #143A15;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 32px;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .linia1, .linia2, .linia3, .linia4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .tile {
+    width: 40px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #222;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,64 @@
+body {
+    background: #ececec;
+    font-family: Arial, sans-serif;
+  }
+  
+  .catalogo {
+    width: 820px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px 30px 30px 30px;
+  }
+  
+  .catalogo h2 {
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  
+  .caso {
+    margin-top: 30px;
+  }
+  
+  .descripcion {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .contenedor {
+    display: flex;
+    gap: 10px;
+    background: #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: row;
+  }
+  
+  .contenedor.nowrap {
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+  }
+  
+  .contenedor.wrap {
+    flex-wrap: wrap;
+    min-height: 110px;
+    align-content: flex-start;
+  }
+  
+  .contenedor img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px dashed #999;
+    border-radius: 10px;
+    background: #fff;
+  }
+  
+  
