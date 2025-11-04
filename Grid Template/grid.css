@@ -1,0 +1,32 @@
+.grid-template {
+  display: grid;
+  grid-template-areas:
+    "square c1 c2"
+    "square c3 c4"
+    "c5 c6 c7";
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 500px;
+  height: 400px;
+}
+.square {
+  grid-area: square;
+  background: grey;
+  border-radius: 16px;
+}
+.circle {
+  background: grey;
+  border-radius: 50%;
+}
+.grid-template .circle:nth-child(2) { grid-area: c1; }
+.grid-template .circle:nth-child(3) { grid-area: c2; }
+.grid-template .circle:nth-child(4) { grid-area: c3; }
+.grid-template .circle:nth-child(5) { grid-area: c4; }
+.grid-template .circle:nth-child(6) { grid-area: c5; }
+.grid-template .circle:nth-child(7) { grid-area: c6; }
+.grid-template .circle:nth-child(8) { grid-area: c7; }
+
+
+
+
