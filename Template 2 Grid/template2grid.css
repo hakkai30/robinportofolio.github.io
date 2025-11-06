@@ -1,0 +1,77 @@
+/* .head */
+.head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 32px;
+  background: #f3f3f3;
+  padding: 18px 36px;
+}
+
+/* .search-bar */
+.search-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 1050px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #ddd;
+  align-items: center;
+  margin-left: 24px;
+}
+
+/* .main-nav */
+.main-nav {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 34px;
+  background: #fafafa;
+  padding: 12px 32px;
+  font-size: 17px;
+  justify-content: end;
+}
+
+/* .hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* .categories */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-content: center;
+  padding: 38px 0 18px 0;
+}
+
+/* .gifts-items */
+.gifts-items {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  gap: 18px;
+  justify-content: center;
+}
+
+/* .lifestyle-decor */
+.lifestyle-decor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  justify-content: center;
+  margin: 36px 0;
+}
+
+  
+  
+  
+
+  
