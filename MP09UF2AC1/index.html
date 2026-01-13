@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Gràfics vectorials</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { margin-bottom: 40px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 40px; }
+    svg { border: 1px solid #ccc; }
+    img { max-width: 250px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Imatges vectorials (SVG) i mapa de bits</h1>
+
+  <!-- CASA -->
+  <section>
+    <h2>Imatge 1: Casa</h2>
+    <div class="grid">
+      <!-- Versió vectorial SVG -->
+      <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cel -->
+        <rect x="0" y="0" width="250" height="180" fill="#87CEEB" />
+        <!-- Terra -->
+        <rect x="0" y="180" width="250" height="70" fill="#7CFC00" />
+        <!-- Sol -->
+        <circle cx="40" cy="40" r="25" fill="#FFD700" />
+        <!-- Casa -->
+        <rect x="70" y="90" width="120" height="110" fill="#FFA07A" />
+        <!-- Teulada -->
+        <polygon points="130,40  fifty,90 190,90"
+                 fill="#CD853F" />
+        <!-- Finestres -->
+        <rect x="80" y="110" width="35" height="30" fill="white" />
+        <rect x="145" y="110" width="35" height="30" fill="white" />
+        <!-- Porta -->
+        <rect x="120" y="135" width="30" height="65" fill="#8B4513" />
+        <circle cx="145" cy="165" r="3" fill="#FFD700" />
+      </svg>
+
+      <!-- Versió mapa de bits (captura) -->
+      <div>
+        <h3>Captura (bitmap)</h3>
+        <img src="Screenshot 2026-01-13 at 21.13.00.png" alt="Casa en mapa de bits">
+      </div>
+    </div>
+  </section>
+
+  <!-- COTXE -->
+  <section>
+    <h2>Imatge 2: Cotxe</h2>
+    <div class="grid">
+      <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fons -->
+        <rect x="0" y="0" width="250" height="250" fill="#E0E0E0" />
+        <!-- Cos del cotxe -->
+        <rect x="60" y="120" width="140" height="50" fill="red" />
+        <!-- Part superior -->
+        <rect x="80" y="90" width="100" height="40" fill="red" />
+        <!-- Finestres -->
+        <rect x="85" y="95" width="40" height="30" fill="#87CEEB" />
+        <rect x="135" y="95" width="40" height="30" fill="#87CEEB" />
+        <!-- Llums darrere i davant -->
+        <rect x="60" y="130" width="15" height="20" fill="yellow" />
+        <rect x="185" y="130" width="15" height="20" fill="yellow" />
+        <!-- Rodes -->
+        <circle cx="90" cy="180" r="22" fill="#333333" />
+        <circle cx="170" cy="180" r="22" fill="#333333" />
+        <circle cx="90" cy="180" r="10" fill="#666666" />
+        <circle cx="170" cy="180" r="10" fill="#666666" />
+      </svg>
+
+      <div>
+        <h3>Captura (bitmap)</h3>
+        <img src="Screenshot 2026-01-13 at 21.13.08.png" alt="Cotxe en mapa de bits">
+      </div>
+    </div>
+  </section>
+
+  <!-- ROBOT -->
+  <section>
+    <h2>Imatge 3: Robot</h2>
+    <div class="grid">
+      <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fons -->
+        <rect x="0" y="0" width="250" height="250" fill="#F5F5F5" />
+        <!-- Antena -->
+        <line x1="125" y1="40" x2="125" y2="80" stroke="gray" stroke-width="6" />
+        <circle cx="125" cy="30" r="8" fill="red" />
+        <!-- Cap -->
+        <rect x="75" y="80" width="100" height="70" rx="15" ry="15" fill="#B0B0B0" />
+        <!-- Ulls -->
+        <circle cx="100" cy="110" r="10" fill="lime" />
+        <circle cx="150" cy="110" r="10" fill="lime" />
+        <circle cx="100" cy="110" r="4" fill="white" />
+        <circle cx="150" cy="110" r="4" fill="white" />
+        <!-- Cos -->
+        <rect x="90" y="150" width="70" height="80" fill="#B0B0B0" />
+        <!-- Braços -->
+        <rect x="50" y="165" width="40" height="15" fill="#B0B0B0" />
+        <rect x="160" y="165" width="40" height="15" fill="#B0B0B0" />
+        <!-- Botons -->
+        <circle cx="125" cy="170" r="6" fill="red" />
+        <circle cx="125" cy="190" r="6" fill="lime" />
+        <circle cx="125" cy="210" r="6" fill="blue" />
+      </svg>
+
+      <div>
+        <h3>Captura (bitmap)</h3>
+        <img src="Screenshot 2026-01-13 at 21.13.14.png" alt="Robot en mapa de bits">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Diferències vectorial vs mapa de bits</h2>
+    <p>
+      En aquestes tres imatges, quan s’amplia molt la versió SVG, les vores es mantenen nítides
+      perquè el navegador redibuixa les formes matemàtiques; en canvi, les captures en format PNG/JPG
+      mostren píxels i pèrdua de qualitat en fer molt zoom.
+    </p>
+  </section>
+</body>
+</html>
