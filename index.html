@@ -1,54 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="portafolio.css" />
+  <meta charset="UTF-8">
+  <title>Portafolio de Robin Govina Madamba</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuente Google (opcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="portafolio.css">
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Portafolio de Robin Govina Madamba</h1>
-        </header>
+  <main>
+    <header>
+      <h1>Portafolio de Robin Govina Madamba</h1>
+      <p class="intro">
+        Desarrollador web en formación, enfocado en maquetación con HTML y CSS,
+        y en construir interfaces limpias y funcionales.
+      </p>
+    </header>
 
-        <section class="trabajos">
-            <h2>Trabajos destacados</h2>
-            <div class="trabajo">
-                <h3>Proyectos de HTML y CSS</h3>
-                <p> 
-                    <a href="Template 1/template.html" target="_blank">Clonación de un template</a>
-                    </br>
-                    <a href="Catalogo/catalogo.html" target="_blank">Flexbox Wrap y NoWrap</a>
-                    </br>
-                    <a href="Windows 8/windows.html" target="_blank">Representación del menu Windows 8</a>
-                    </br>
-                    <a href="Template 2/template2.html" target="_blank">Clonación de un template usando propiedades flex</a>
-                    </br>
-                    <a href="Template 2 Grid/template2grid.html" target="_blank">Clonación de un template usando propiedades grid</a>
-                    </br>
-                    <a href="Grid Template/grid.html" target="_blank">Grid Tempplate 1</a>
-                    </br>
-                    <a href="Grid Template 2/grid2.html" target="_blank">Grid Template 2</a>
-                    </br>
-                    <a href="MP09UF2AC1/index.html" target="_blank">MP09UF2AC1</a>
-                </p>
-            </div>
-        </section>
+    <section class="trabajos" id="trabajos">
+      <h2>Trabajos destacados</h2>
 
-        <nav>
-            <a href="presentacion.html">Presentación</a> |
-            <a href="formacion.html">Formación</a> |
-            <a href="conocimientos.html">Conocimientos</a> |
-            <a href="experiencia.html">Experiencia</a> 
-        </nav>
-    </main>
-    <script src="main.js"></script>
+      <div class="trabajo card-anim">
+        <h3>Proyectos de HTML y CSS</h3>
+        <p>Ejercicios de maquetación básica y estructura semántica con HTML5 y CSS3.</p>
+        <div class="links">
+          <a href="Template 1/template.html" target="_blank">Clon de template (HTML/CSS)</a>
+          <a href="Catalogo/catalogo.html" target="_blank">Catálogo con Flexbox (wrap / nowrap)</a>
+          <a href="Windows 8/windows.html" target="_blank">Menú estilo Windows 8</a>
+        </div>
+      </div>
+
+      <div class="trabajo card-anim">
+        <h3>Layouts con Flexbox</h3>
+        <p>Prácticas centradas en sistemas de diseño flexibles y responsivos usando Flexbox.</p>
+        <div class="links">
+          <a href="Template 2/template2.html" target="_blank">Clon de template con Flexbox</a>
+          <a href="Template 2 Grid/template2grid.html" target="_blank">Versión Grid del mismo template</a>
+        </div>
+      </div>
+
+      <div class="trabajo card-anim">
+        <h3>Layouts con CSS Grid</h3>
+        <p>Ejercicios para dominar CSS Grid, plantillas de columnas/filas y áreas.</p>
+        <div class="links">
+          <a href="Grid Template/grid.html" target="_blank">Grid Template 1</a>
+          <a href="Grid Template 2/grid2.html" target="_blank">Grid Template 2</a>
+        </div>
+      </div>
+
+      <div class="trabajo card-anim">
+        <h3>Otros ejercicios</h3>
+        <p>Trabajo de clase donde se combinan varias técnicas de maquetación.</p>
+        <div class="links">
+          <a href="MP09UF2AC1/index.html" target="_blank">MP09UF2AC1</a>
+        </div>
+      </div>
+    </section>
+
+    <nav>
+      <a href="presentacion.html">Presentación</a>
+      <a href="formacion.html">Formación</a>
+      <a href="conocimientos.html">Conocimientos</a>
+      <a href="experiencia.html">Experiencia</a>
+    </nav>
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

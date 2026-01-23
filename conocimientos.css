@@ -1,60 +1,153 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9f7ef;
-    color: #155724;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-main {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(21, 87, 36, 0.2);
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+  color: #e5e7eb;
+  text-align: center;
+  padding: 20px;
+}
+
+main.conocimientos {
+  max-width: 960px;
+  margin: 60px auto;
+  background: rgba(15, 23, 42, 0.92);
+  padding: 40px 32px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
 }
 
 h1 {
-    color: #19692c;
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: square;
-    padding-left: 0;
-    display: inline-block;
-    text-align: left;
-}
-
-ul li {
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-
-nav {
-    margin-top: 30px;
-}
-
-nav a {
-    color: #19692c;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 600;
-}
-
-nav a:hover {
-    text-decoration: underline;
+  color: #38bdf8;
+  margin-bottom: 18px;
+  font-size: 2rem;
 }
 
 .centro {
-    max-width: 160px;
-    margin: 10px auto 18px auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.13);
+  max-width: 180px;
+  margin: 10px auto 18px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.9);
 }
 
+.intro {
+  max-width: 600px;
+  margin: 0 auto 18px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
 
-  
+/* Lista */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: inline-block;
+  text-align: left;
+  margin-top: 8px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  color: #e5e7eb;
+}
+
+/* Panel de detalle: totalmente oculto al inicio */
+.detalle-conocimiento {
+  margin: 0 0 0 8px;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #020617, #02091b);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.9);
+  color: #e0f2fe;
+  max-width: 520px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    padding 0.2s ease,
+    margin 0.2s ease;
+}
+
+/* Estado visible (clase que pondremos desde JS) */
+.detalle-conocimiento.abierto {
+  max-height: 200px;          /* suficiente para el texto */
+  opacity: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  pointer-events: auto;
+}
+
+/* Nav */
+nav {
+  margin-top: 30px;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  padding-top: 14px;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #f97316;
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hover items */
+ul li:hover {
+  background-color: rgba(56, 189, 248, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.85);
+}
+
+@media (max-width: 600px) {
+  main.conocimientos {
+    margin: 24px 12px;
+    padding: 28px 18px 20px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  nav a {
+    margin: 0 6px;
+    font-size: 0.95rem;
+  }
+}

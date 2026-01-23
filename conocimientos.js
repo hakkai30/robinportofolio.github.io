@@ -1,17 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const listaConocimientos = document.querySelector('.conocimientos ul');
   const itemsConocimientos = document.querySelectorAll('.conocimientos ul li');
-
   if (!listaConocimientos || itemsConocimientos.length === 0) return;
 
   itemsConocimientos.forEach((item, index) => {
     const panel = document.createElement('div');
     panel.classList.add('detalle-conocimiento');
-    panel.style.maxHeight = '0';
-    panel.style.overflow = 'hidden';
-    panel.style.transition = 'max-height 0.3s ease';
-    panel.style.fontSize = '0.9rem';
-    panel.style.color = '#1b4f72'; 
 
     const textos = [
       'Experiencia resolviendo ejercicios de programación estructurada y algoritmos básicos en C.',
@@ -27,22 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     panel.textContent = textos[index] || 'Detalle de conocimiento.';
     item.insertAdjacentElement('afterend', panel);
 
-    item.style.cursor = 'pointer';
-
+    // Click para abrir/cerrar solo uno
     item.addEventListener('click', () => {
-      const isOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
+      const abierto = panel.classList.contains('abierto');
 
+      // Cerrar todos
       document.querySelectorAll('.detalle-conocimiento').forEach(p => {
-        p.style.maxHeight = '0';
+        p.classList.remove('abierto');
       });
 
-      if (!isOpen) {
-        panel.style.maxHeight = panel.scrollHeight + 'px';
+      // Abrir si no estaba abierto
+      if (!abierto) {
+        panel.classList.add('abierto');
       }
     });
 
+    // Hover colores adaptados a oscuro
     item.addEventListener('mouseenter', () => {
-      item.style.backgroundColor = '#e0f4e8';
+      item.style.backgroundColor = 'rgba(56, 189, 248, 0.12)';
     });
 
     item.addEventListener('mouseleave', () => {

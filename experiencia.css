@@ -1,63 +1,141 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo global */
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #fff8e1;
-    color: #5a3e1b;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+  color: #e5e7eb;
+  text-align: center;
+  padding: 20px;
 }
 
-main {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(179, 116, 0, 0.2);
+/* Tarjeta principal */
+main.experiencia {
+  max-width: 960px;
+  margin: 60px auto;
+  background: rgba(15, 23, 42, 0.92);
+  padding: 40px 32px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  text-align: left;
 }
 
+/* Título */
 h1 {
-    color: #8c6d1f;
-    margin-bottom: 25px;
+  color: #38bdf8;
+  margin-bottom: 22px;
+  font-size: 2rem;
+  text-align: center;
 }
 
-h2 {
-    color: #8c6d1f;
-    margin-bottom: 10px;
+/* Resumen dinámico */
+.resumen-experiencia {
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #020617, #02091b);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.9);
+  font-size: 0.95rem;
+  color: #e0f2fe;
 }
 
+/* Artículos de la línea temporal */
 article {
-    margin-bottom: 20px;
-    padding-left: 10px;
-    border-left: 4px solid #b37400;
-    text-align: center;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border-left: 3px solid #38bdf8;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.7);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease,
+              border-color 0.2s ease;
 }
 
+/* Puesto */
+article h2 {
+  color: #e5e7eb;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+}
+
+/* Fecha */
 time {
-    font-style: italic;
-    color: #b37400;
-    display: block;
-    margin-bottom: 10px;
+  font-style: italic;
+  color: #7dd3fc;
+  display: block;
+  margin-bottom: 6px;
 }
 
-p {
-    margin-bottom: 0;
+/* Descripción */
+article p {
+  margin-bottom: 0;
+  color: #cbd5f5;
+  font-size: 0.98rem;
 }
 
+/* Nav inferior */
 nav {
-    margin-top: 30px;
+  margin-top: 26px;
+  text-align: center;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  padding-top: 14px;
 }
 
 nav a {
-    color: #8c6d1f;
-    font-weight: 600;
-    margin: 0 12px;
-    text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 600;
+  margin: 0 12px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+/* Subrayado animado nav */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #f97316;
+  transition: width 0.25s ease;
 }
 
+nav a:hover::after {
+  width: 100%;
+}
 
-  
+/* Hover de experiencia */
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.95);
+  background-color: #02091b;
+  border-color: #f97316;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  main.experiencia {
+    margin: 24px 12px;
+    padding: 28px 18px 20px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  nav a {
+    margin: 0 6px;
+    font-size: 0.95rem;
+  }
+}
