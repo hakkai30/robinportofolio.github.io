@@ -1,110 +1,65 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Formación — usa base.css */
 
-/* Fondo oscuro temático */
-body {
-  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
-  color: #e5e7eb;
-}
-
-/* Contenedor principal */
-main.formacion {
-  max-width: 960px;
-  margin: 60px auto;
-  padding: 40px 32px 30px;
-  background: rgba(15, 23, 42, 0.92);
-  border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px);
-  text-align: left;
-}
-
-/* Título */
 h1 {
-  color: #38bdf8;
+  color: var(--color-accent);
   margin-bottom: 20px;
   text-align: center;
   font-size: 2rem;
 }
 
-/* Artículos de formación */
 article {
   margin-bottom: 22px;
-  background: linear-gradient(145deg, #020617, #02091b);
+  background: var(--color-bg-elevated);
   padding: 14px 14px 16px;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.8);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
   position: relative;
   overflow: hidden;
 }
 
-/* Glow en esquina */
 article::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(56, 189, 248, 0.22),
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
-/* Títulos dentro de los artículos */
 article h2 {
   margin-top: 0;
   margin-bottom: 8px;
-  color: #38bdf8;
+  color: var(--color-accent);
 }
 
-/* Imágenes de centros */
 .centro-img {
   max-width: 160px;
-  margin: 10px 0 14px 0;
+  margin: 10px 0 14px;
   display: block;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 3px 12px rgba(15, 23, 42, 0.8);
 }
 
-/* Texto */
 article p {
   margin-bottom: 8px;
-  color: #e5e7eb;
+  color: var(--color-text);
 }
 
-/* Enlaces */
-a {
-  color: #7dd3fc;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 2px;
+.formacion a {
+  color: var(--color-accent-soft);
 }
 
-/* Subrayado animado */
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: #f97316;
-  transition: width 0.25s ease;
+.formacion a::after {
+  background: var(--color-cta);
 }
 
-a:hover::after {
-  width: 100%;
-}
-
-/* Panel interno de detalle en cada formación */
 .detalle-formacion {
   max-height: 0;
   overflow: hidden;
@@ -113,10 +68,10 @@ a:hover::after {
   padding-top: 0;
   padding-bottom: 0;
   color: #e0f2fe;
-  transition: max-height 0.3s ease, opacity 0.2s ease,
-              padding 0.2s ease, margin 0.2s ease;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease,
+    margin 0.2s ease;
   font-size: 0.95rem;
-  border-top: 0 solid rgba(148, 163, 184, 0.5);
+  border-top: 0 solid var(--color-border);
 }
 
 .detalle-formacion.abierto {
@@ -128,39 +83,10 @@ a:hover::after {
   border-top-width: 1px;
 }
 
-/* Nav inferior */
-nav {
-  margin-top: 25px;
+.formacion nav {
   margin-bottom: 6px;
-  text-align: center;
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  padding-top: 14px;
 }
 
-nav a {
-  margin: 0 10px;
-  font-weight: 600;
-  color: #e5e7eb;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: #f97316;
-  transition: width 0.25s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Hover visual de artículos */
 article:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 26px rgba(15, 23, 42, 0.95);
@@ -170,19 +96,8 @@ article:hover::before {
   opacity: 1;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
-  main.formacion {
-    margin: 24px 12px;
-    padding: 28px 18px 20px;
-  }
-
   h1 {
     font-size: 1.7rem;
-  }
-
-  nav a {
-    margin: 0 6px;
-    font-size: 0.95rem;
   }
 }

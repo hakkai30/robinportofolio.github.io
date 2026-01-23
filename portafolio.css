@@ -1,42 +1,19 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Portafolio — índice de trabajos (usa base.css) */
 
-/* FONDO OSCURO TEMÁTICO */
-body {
-  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
-  color: #e5e7eb;
-}
-
-/* Contenedor principal tipo “tarjeta clara sobre fondo oscuro” */
-main {
-  max-width: 960px;
-  margin: 60px auto;
-  padding: 40px 32px 32px;
-  background: rgba(15, 23, 42, 0.92);   /* gris azulado oscuro */
-  border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px);
-}
+/* Reset local evitado: base.css ya aplica box-sizing, margin, padding */
 
 /* Cabecera */
 header h1 {
   font-size: 2.4rem;
   margin-bottom: 14px;
-  color: #38bdf8;  /* azul cian */
+  color: var(--color-accent, #38bdf8);
   text-align: center;
 }
 
 .intro {
   text-align: center;
   font-size: 1rem;
-  color: #cbd5f5;
+  color: var(--color-text-muted, #cbd5f5);
   max-width: 600px;
   margin: 0 auto 30px;
 }
@@ -51,57 +28,57 @@ header h1 {
 
 .trabajos h2 {
   grid-column: 1 / -1;
-  color: #e5e7eb;
+  color: var(--color-text);
   margin-bottom: 6px;
   font-size: 1.4rem;
 }
 
-/* Tarjeta individual en oscuro */
+/* Tarjeta de proyecto */
 .trabajo {
-  background: linear-gradient(145deg, #0f172a, #020617);
-  border-radius: 16px;
+  background: var(--color-bg-elevated, linear-gradient(145deg, #0f172a, #020617));
+  border-radius: var(--radius-md, 16px);
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.75);
   padding: 20px 18px 18px;
   text-align: left;
   position: relative;
   overflow: hidden;
+  transition: transform var(--transition-smooth, 0.3s ease),
+    box-shadow var(--transition-smooth, 0.3s ease);
 }
 
-/* Glow en esquina */
 .trabajo::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%);
+  background: radial-gradient(
+    circle at top left,
+    var(--color-glow, rgba(56, 189, 248, 0.25)),
+    transparent 55%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-smooth, 0.3s ease);
 }
 
-/* Títulos de tarjetas */
 .trabajo h3 {
-  color: #38bdf8;
+  color: var(--color-accent, #38bdf8);
   margin-bottom: 8px;
   font-size: 1.15rem;
 }
 
-/* Texto de tarjetas */
 .trabajo p {
   margin-bottom: 12px;
   font-size: 0.96rem;
-  color: #e5e7eb;
+  color: var(--color-text);
 }
 
-/* Contenedor de links dentro de las tarjetas */
 .trabajo .links {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-/* Links de proyectos en modo oscuro */
 .trabajo a {
-  color: #7dd3fc;
+  color: var(--color-accent-soft, #7dd3fc);
   text-decoration: none;
   font-size: 0.93rem;
   position: relative;
@@ -109,7 +86,6 @@ header h1 {
   width: fit-content;
 }
 
-/* Subrayado animado */
 .trabajo a::after {
   content: "";
   position: absolute;
@@ -117,49 +93,21 @@ header h1 {
   bottom: 0;
   height: 2px;
   width: 0;
-  background: #f97316;
+  background: var(--color-cta, #f97316);
   transition: width 0.25s ease;
 }
 
-.trabajo a:hover::after {
+.trabajo a:hover::after,
+.trabajo a:focus-visible::after {
   width: 100%;
 }
 
-/* Navegación inferior */
-nav {
-  margin-top: 30px;
-  text-align: center;
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-  padding-top: 18px;
+.trabajo a:hover,
+.trabajo a:focus-visible {
+  color: var(--color-cta, #f97316);
 }
 
-nav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0 15px;
-  font-size: 1rem;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-/* Subrayado nav */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: #f97316;
-  transition: width 0.25s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Animaciones de entrada de tarjetas */
+/* Animación de entrada */
 .card-anim {
   opacity: 0;
   transform: translateY(10px);
@@ -171,29 +119,23 @@ nav a:hover::after {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Hover extra */
+@media (prefers-reduced-motion: reduce) {
+  .card-anim.visible {
+    transition: none;
+  }
+}
+
 .trabajo:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.9);
+  box-shadow: var(--shadow-elevated, 0 16px 36px rgba(15, 23, 42, 0.9));
 }
 
 .trabajo:hover::before {
   opacity: 1;
 }
 
-/* Responsivo */
 @media (max-width: 600px) {
-  main {
-    margin: 24px 12px;
-    padding: 28px 18px 20px;
-  }
-
   header h1 {
     font-size: 1.9rem;
-  }
-
-  nav a {
-    margin: 0 8px;
-    font-size: 0.95rem;
   }
 }
